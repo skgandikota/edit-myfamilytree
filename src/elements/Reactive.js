@@ -1,4 +1,5 @@
-import f3 from "../../../src/index.js";
+// @ts-ignore
+import f3 from "../index.js";
 
 export default function Reactive(selector, getCode) {
   const element = document.querySelector(selector)

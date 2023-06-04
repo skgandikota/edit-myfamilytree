@@ -56,6 +56,7 @@ import {Form} from "./src/view/elements/Form.js"
     const postSubmit = props.postSubmit;
     props.postSubmit = (ps_props) => {postSubmit(ps_props)}
     const el = document.querySelector('#form_modal'),
+      // @ts-ignore
       modal = M.Modal.getInstance(el),
       edit = {el, open:()=>modal.open(), close:()=>modal.close()}
     Form({...props, card_edit, card_display, edit})
