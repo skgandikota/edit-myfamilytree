@@ -51,8 +51,7 @@
 </head>
 
 <body>
-  <button onclick="googleSignin()">Google Signin</button>
-  <button onclick="googleSignout()">Google Signout</button>
+
   <div style="max-width: 1100px; margin: auto">
     <div id="FamilyChart" style="position: relative"></div>
     <div class="card p5">
@@ -73,35 +72,6 @@
       modal.setAttribute("class", "modal");
       M.Modal.init(modal, {});
     });
-    var provider = new firebase.auth.GoogleAuthProvider();
-
-    function googleSignin() {
-      firebase.auth()
-
-        .signInWithPopup(provider).then(function (result) {
-          var token = result.credential.accessToken;
-          var user = result.user;
-
-          console.log(token)
-          console.log(user)
-        }).catch(function (error) {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-
-          console.log(error.code)
-          console.log(error.message)
-        });
-    }
-
-    function googleSignout() {
-      firebase.auth().signOut()
-
-        .then(function () {
-          console.log('Signout Succesfull')
-        }, function (error) {
-          console.log('Signout Failed')
-        });
-    }
   </script>
 </body>
 
